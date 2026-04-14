@@ -1,162 +1,93 @@
-**Drug Classification**
+# 💊 Drug Classification Project
 
-**Project Overview**
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project builds a Machine Learning model to predict the correct drug type for patients based on medical attributes like age, sex, blood pressure, cholesterol, and sodium-to-potassium ratio.
+## 📋 Project Overview
+This project leverages Machine Learning to predict the most suitable drug type for patients based on specific medical attributes. By analyzing factors like blood pressure, cholesterol, and electrolyte ratios, the model provides data-driven support for healthcare professionals in clinical decision-making.
 
-The goal is to assist healthcare professionals with data-driven drug prescription decisions.
+### 🎯 Objectives
+* **Predict** drug categories with high precision.
+* **Identify** key medical features that influence prescription.
+* **Develop** an end-to-end automated Machine Learning pipeline.
 
-**Objective**
+---
 
-- Predict drug category accurately
+## 📊 Dataset Overview
+The model is trained on a clinical dataset containing the following features:
 
-- Understand key influencing features
+| Feature | Description |
+| :--- | :--- |
+| **Age** | Patient's age |
+| **Sex** | Gender (Male/Female) |
+| **BP** | Blood Pressure levels (Low, Normal, High) |
+| **Cholesterol** | Cholesterol levels (Normal, High) |
+| **Na_to_K** | Sodium-to-Potassium ratio in the blood |
+| **Drug** | **Target Variable:** The prescribed drug type |
 
-- Build an end-to-end ML pipeline
+---
 
-**Dataset Overview**
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Data Handling:** Pandas, NumPy
+* **Visualization:** Matplotlib, Seaborn
+* **Machine Learning:** Scikit-learn (Decision Tree, Random Forest, Logistic Regression)
 
-Feature	               Description
+---
 
-Age                 	Patient age
+## 📉 Visualizations
+> [!TIP]
+> To see these images, ensure your plots are saved in a `/visualizations` folder within your repository.
 
-Sex	                  Male/Female
+| Target Distribution | Feature Relationships | Confusion Matrix |
+| :---: | :---: | :---: |
+| ![Target Distribution](visualizations/target_dist.png) | ![Feature Relationships](visualizations/feature_rel.png) | ![Confusion Matrix](visualizations/confusion_matrix.png) |
 
-BP	                  Blood Pressure
+---
 
-Cholesterol	          Cholesterol Level
+## 🚀 Project Workflow
 
-Na_to_K	              Sodium to Potassium ratio
+1.  **Data Preprocessing:** Handled missing values, removed duplicates, and corrected data types.
+2.  **Exploratory Data Analysis (EDA):** Analyzed feature distributions and categorical relationships.
+3.  **Feature Engineering:** Encoded categorical variables (Label Encoding) and scaled numerical features.
+4.  **Model Building:** Evaluated multiple algorithms including Decision Trees, Random Forests, and Logistic Regression.
+5.  **Model Evaluation:** Measured performance using Accuracy, F1-Score, and Confusion Matrices.
 
-Drug	                Target variable
+---
 
-**Visualizations**
+## 🏆 Results & Key Learnings
+* **Top Performer:** The **Random Forest** model achieved the highest accuracy.
+* **Feature Importance:** The `Na_to_K` (Sodium-to-Potassium ratio) was identified as the most significant predictor.
+* **Key Insight:** Robust data preprocessing and feature encoding are critical for handling medical categorical data effectively.
 
-🔹 Target Distribution
+---
 
+## ⚙️ How to Run
 
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/ShitalDatascience/drug-classification.git](https://github.com/ShitalDatascience/drug-classification.git)
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Execute the pipeline:**
+    ```bash
+    python main.py
+    ```
 
+---
 
-🔹 Feature Relationships
-
-
-
-
-🔹 Confusion Matrix
-
-
-
-
-Replace these placeholder images with your actual plots (saved as .png from your notebook)
-
-**Tech Stack**
-
-- Python
-  
-- Pandas & NumPy
-  
-- Matplotlib & Seaborn
-  
-- Scikit-learn
-  
-**Project Workflow**
-
-1️⃣ Data Preprocessing
-
--Checked missing values
-
--Removed duplicates
-
--Converted data types
-
-2️⃣ Exploratory Data Analysis (EDA)
-
-- Distribution plots
-
-- Category analysis
-
-- Feature relationships
-
-3️⃣ Feature Engineering
-
-- Encoding categorical variables
-
-- Scaling numerical features (if required)
-
-4️⃣ Model Building
-
-- Decision Tree 
-- Random Forest 
-- Logistic Regression
-  
-5️⃣ Model Evaluation
-
-- Accuracy Score
-- Confusion Matrix
-- Classification Report
-  
-**Results**
-
-- High accuracy achieved.
-  
-- Random Forest performed best
-  
-- Key influencing features:
-     Na_to_K ratio (most important)
-  
-     Blood Pressure
-  
-     Cholesterol
-
-**Feature Importance**
-
-Feature importance was extracted using tree-based models to understand:
-
-Which features influence predictions most.
-
-How medical factors impact drug selection.
-
-**How to Run**
-
-**Clone repo**
-
-git clone https://github.com/your-username/drug-classification.git
-
-**Install dependencies**
-
-pip install -r requirements.txt
-
-**Run project**
-
-python main.py
-
-**Project Structure**
-
+## 📂 Project Structure
+```text
 drug-classification/
 │
-├── data/
-├── notebooks/
-├── models/
-├── src/
-├── requirements.txt
-└── README.md
-
-**Future Improvements**
-
-- Hyperparameter tuning
-  
-- Cross-validation
- 
-- Model deployment (Flask / FastAPI)
-  
-- Real-time prediction system
-
-**Key Learnings**
-
-- Data preprocessing is crucial
-
-- Feature engineering improves performance
-
-- Model selection impacts results
-
-- Feature importance helps interpretation
+├── data/               # Raw and processed datasets
+├── notebooks/          # Jupyter notebooks for EDA and testing
+├── models/             # Saved model files (.pkl)
+├── src/                # Source code for the ML pipeline
+├── visualizations/     # Generated plots and graphs
+├── requirements.txt    # Project dependencies
+└── README.md           # Project documentation
